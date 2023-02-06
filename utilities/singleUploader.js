@@ -32,7 +32,7 @@ function uploader(
     },
   });
 
-  // preapre the final multer upload object
+  // preapre the multer upload object
   const upload = multer({
     storage: storage,
     limits: {
