@@ -36,17 +36,21 @@
 <script>
   const modal = document.querySelector("#add-user-modal");
   const form = document.querySelector("#add-user-form");
+
   // success toast
   const successToast = Toastify({
     text: "User was added successfully! Reloading the list...",
     duration: 1000,
   });
+
   function closeModal() {
     modal.style.display = "none";
   }
+
   function openModal() {
     modal.style.display = "block";
   }
+
   // form submit handler
   form.onsubmit = async function (event) {
     event.preventDefault();
