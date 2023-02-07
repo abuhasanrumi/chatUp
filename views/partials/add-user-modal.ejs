@@ -51,7 +51,7 @@
   form.onsubmit = async function (event) {
     event.preventDefault();
 
-    // clear errors first
+    // clear necessary errors first
     const errorPlaceholders = document.querySelectorAll("p.error");
     for (let i = 0; i < errorPlaceholders.length; i++) {
       errorPlaceholders[i].style.display = "none";
