@@ -46,6 +46,7 @@
             text: "User was deleted successfully!",
             duration: 3000,
         });
+
         const deleteErrorToast = Toastify({
             text: "Could not delete the user!",
             duration: 3000,
@@ -56,7 +57,9 @@
             let response = await fetch(`/users/${userId}`, {
                 method: "DELETE",
             });
+
             let result = await response.json();
+
             if (result.errors) {
                 deleteErrorToast.showToast();
             } else {

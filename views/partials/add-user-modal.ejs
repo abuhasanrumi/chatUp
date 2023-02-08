@@ -46,7 +46,6 @@
   function closeModal() {
     modal.style.display = "none";
   }
-
   function openModal() {
     modal.style.display = "block";
   }
@@ -55,11 +54,12 @@
   form.onsubmit = async function (event) {
     event.preventDefault();
 
-    // clear necessary errors first
+    // clear errors first
     const errorPlaceholders = document.querySelectorAll("p.error");
     for (let i = 0; i < errorPlaceholders.length; i++) {
       errorPlaceholders[i].style.display = "none";
     }
+
     const inputErrors = document.querySelectorAll("input.error");
     if (inputErrors.length > 0) {
       for (let j = 0; j < inputErrors.length; j++) {
@@ -85,9 +85,11 @@
       Object.keys(result.errors).forEach((fieldName) => {
         // add error class to all inputs
         form[fieldName].classList.add("error");
+
         // set all error placeholders (p tag) textContent
         const errorPlaceholder = document.querySelector(`.${fieldName}-error`);
         errorPlaceholder.textContent = result.errors[fieldName].msg;
+
         // make all placeholders visible
         errorPlaceholder.style.display = "block";
       });
@@ -96,6 +98,7 @@
       successToast.showToast();
       closeModal();
       document.querySelector("p.error").style.display = "none";
+
       // reload the page after 1 second
       setTimeout(() => {
         location.reload();
