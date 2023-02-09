@@ -610,7 +610,8 @@ input[type="submit"]:active {
 }
 
 #branding img {
-  width: 100px;
+  width: 240px;
+  margin-bottom: 30px;
 }
 
 /* Form Section */
